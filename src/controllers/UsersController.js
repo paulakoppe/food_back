@@ -4,7 +4,7 @@ const AppError = require("../utils/AppError");
 
 class UsersController {
     async create(request, response) {
-        const { name, email, password, admin } = request.body;
+        const { name, email, password, is_admin } = request.body;
 
         const database = await sqliteConnection();
 
@@ -12,7 +12,7 @@ class UsersController {
 
         await database.run(
           "INSERT INTO users (name, email, password, is_admin) VALUES (?, ?, ?, ?)",
-          [name, email, hashedPassword, admin]
+          [name, email, hashedPassword, is_admin]
         );
         return response.status(201).json();
 
