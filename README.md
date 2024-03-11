@@ -39,9 +39,9 @@ SQLite3
 
 # Acessando
 
-$ git clone https://github.com/paulakoppe/front
+$ git clone https://github.com/paulakoppe/back
 
-$ cd front
+$ cd back
 
 $ npm install
 
